@@ -28,6 +28,20 @@
     
     <h1>Random Dog Breeds?</h1>
     <img src="{{ dog }}" alt="Random Dog Image">
+
+   
+
+    <h1>Random Quote</h1>
+    <p id="random-quote"></p>
+
+    <script>
+      fetch('/random-quote/')
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('random-quote').textContent = data.quote;
+        })
+        .catch(error => console.error('Error:', error));
+    </script>
     
   </body>
 </html>
